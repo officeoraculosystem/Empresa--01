@@ -486,90 +486,66 @@
 </body>
 </html>
 
- <!DOCTYPE html>
+ 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>São José Estética Automotiva & Higienização</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: #0d1117; color: #e6edf3; line-height: 1.6; padding-bottom: 120px; }
-        .promo-banner { background: linear-gradient(90deg, #da3637 0%, #ff5c5c 100%); color: #ffffff; text-align: center; padding: 12px 20px; font-size: 14px; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #ffd700; }
-        header { background: linear-gradient(135deg, #161b22 0%, #0d1117 100%); border-bottom: 2px solid #00e5ff; padding: 40px 20px; text-align: center; }
-        .logo-area h1 { color: #00e5ff; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
-        .badge-location { display: inline-block; background: rgba(255, 215, 0, 0.1); border: 1px solid #ffd700; color: #ffd700; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 10px; font-weight: bold; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .section-title { color: #ffd700; font-size: 20px; text-transform: uppercase; margin: 40px 0 20px 0; padding-left: 10px; border-left: 4px solid #00e5ff; }
-        .card-service { background-color: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 25px; overflow: hidden; }
-        .card-banner { width: 100%; height: auto; max-height: 280px; object-fit: cover; border-bottom: 1px solid #30363d; }
-        .card-content { padding: 20px; }
-        .price-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-        .price-table td { padding: 8px 0; border-bottom: 1px solid #21262d; font-size: 14px; }
-        .price-value { text-align: right; color: #ffd700; font-weight: bold; }
-        .btn-cta { display: block; background-color: #238636; color: #ffffff; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; margin-top: 15px; }
-        
-        /* Estilo Feedback Google */
-        .feedback-box { background: #161b22; border: 2px solid #4285f4; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 30px; }
-        .btn-google { display: block; background-color: #4285f4; color: white; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-        /* Estilo Bot de 5 segundos */
-        #boot-notification { position: fixed; bottom: 100px; right: 20px; background: #161b22; border: 2px solid #00e5ff; padding: 15px; border-radius: 12px; display: none; z-index: 9999; box-shadow: 0 0 20px rgba(0,0,0,0.8); width: 280px; text-align: center; }
-        
-        footer { text-align: center; margin-top: 60px; padding: 30px; color: #8b949e; font-size: 13px; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; z-index: 1000; }
-    </style>
-</head>
-<body>
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+            padding-bottom: 120px;
+        }
 
-    <div class="promo-banner">🔥 VALORES PROMOCIONAIS! GARANTA SEU PREÇO!</div>
+        /* Banner de Promoção de Inauguração */
+        .promo-banner {
+            background: linear-gradient(90deg, #da3637 0%, #ff5c5c 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(218, 54, 55, 0.4);
+            border-bottom: 2px solid #ffd700;
+        }
 
-    <header>
-        <div class="logo-area">
-            <h1>⚡ SÃO JOSÉ ESTÉTICA AUTOMOTIVA ⚡</h1>
-            <div class="badge-location">📍 Setor São José - GYN</div>
-        </div>
-    </header>
+        .promo-banner span {
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
 
-    <div class="container">
-        <div class="feedback-box">
-            <h3>⭐ Avalie nosso atendimento no Google</h3>
-            <p>Sua opinião é fundamental para crescermos!</p>
-            <a href="https://g.page/r/SeuLinkAqui/review" class="btn-google">AVALIAR NO GOOGLE</a>
-        </div>
+        header {
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            border-bottom: 2px solid #00e5ff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
 
-        <div class="section-title">Estética Automotiva</div>
-        <div class="card-service">
-            <div class="card-content">
-                <h3>🧼 Lavagem Simples</h3>
-                <table class="price-table">
-                    <tr><td>Carros de Passeio</td><td class="price-value">R$ 35,00</td></tr>
-                    <tr><td>Mini SUV</td><td class="price-value">R$ 40,00</td></tr>
-                    <tr><td>SUV Grande</td><td class="price-value">R$ 50,00</td></tr>
-                    <tr><td>Picape / Caminhonete</td><td class="price-value">R$ 70,00</td></tr>
-                </table>
-                <a href="https://wa.me/5562991760052" class="btn-cta">Chamar no WhatsApp</a>
-            </div>
-        </div>
-        
-        </div>
+        .logo-area h1 {
+            color: #00e5ff;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
 
-    <div id="boot-notification">
-        <p style="margin-bottom: 10px;">👋 <b>Olá!</b> Vamos agendar seu horário hoje?</p>
-        <a href="https://wa.me/5562991760052" style="color: #00e5ff; font-weight: bold; text-decoration: none;">CLIQUE AQUI E AGENDE →</a>
-    </div>
+        .logo-area p {
+            color: #8b949e;
 
-    <footer>
-        <p>⚡ Desenvolvido com tecnologia <b>Oráculo System - Gestão Inteligente</b></p>
-        <p>&copy; 2026 SÃO JOSÉ ESTÉTICA AUTOMOTIVA</p>
-    </footer>
-
-    <a href="https://wa.me/5562991760052" class="whatsapp-float">💬</a>
-
-    <script>
-        setTimeout(function() {
-            document.getElementById('boot-notification').style.display = 'block';
-        }, 5000);
-    </script>
-</body>
-</html>
+^G Help         ^O Write Out    ^F Where Is     ^K Cut          ^T Execute      ^C Location     M-U Undo        M-A Set Mark
+^X Exit         ^R Read File    ^\ Replace      ^U Paste        ^J Justify      ^/ Go To Line   M-E Redo        M-6 Copy
