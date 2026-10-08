@@ -1,678 +1,821 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>São José Estética Automotiva & Higienização</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    <title>São José Estética Automotiva | Goiânia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            neon: '#FFD700'
+                        },
+                        darkzinc: {
+                            900: '#090A0F',
+                            800: '#12141C',
+                            700: '#1A1D29',
+                            600: '#262A3B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
         }
-
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
         body {
-            background-color: #0d1117;
-            color: #e6edf3;
-            line-height: 1.6;
-            padding-bottom: 120px;
+            font-family: 'Inter', sans-serif;
+            background-color: #090A0F;
+            color: #F3F4F6;
         }
-
-        /* Banner de Promoção de Inauguração */
-        .promo-banner {
-            background: linear-gradient(90deg, #da3637 0%, #ff5c5c 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 12px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(218, 54, 55, 0.4);
-            border-bottom: 2px solid #ffd700;
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(234, 179, 8, 0.25);
         }
-
-        .promo-banner span {
-            color: #ffd700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        .gold-glow-lg {
+            box-shadow: 0 0 45px rgba(234, 179, 8, 0.4);
         }
-
-        header {
-            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
-            border-bottom: 2px solid #00e5ff;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
+        .neon-border {
+            border: 1px solid rgba(234, 179, 8, 0.3);
         }
-
-        .logo-area h1 {
-            color: #00e5ff;
-            font-size: 28px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        .neon-border:focus, .neon-border:hover {
+            border-color: rgba(234, 179, 8, 0.8);
         }
-
-        .logo-area p {
-            color: #8b949e;
-            font-size: 14px;
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        .badge-location {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid #ffd700;
-            color: #ffd700;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-top: 10px;
-            font-weight: bold;
+        ::-webkit-scrollbar-track {
+            background: #090A0F;
         }
-
-        /* Redes Sociais no Topo */
-        .social-header {
-            margin-top: 15px;
-            display: block;
-            text-align: center;
-        }
-
-        .social-icon-link {
-            display: inline-block;
-            margin: 0 8px;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .social-icon-link:hover {
-            transform: scale(1.1);
-        }
-
-        .social-icon-link svg {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .section-title {
-            color: #ffd700;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 40px 0 20px 0;
-            padding-left: 10px;
-            border-left: 4px solid #00e5ff;
-        }
-
-        .grid-cards {
-            display: block;
-        }
-
-        .card-service {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .card-service:hover {
-            border-color: #00e5ff;
-        }
-
-        .card-banner {
-            width: 100%;
-            height: auto;
-            max-height: 280px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid #30363d;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-content h3 {
-            color: #00e5ff;
-            font-size: 18px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-
-        .price-table td {
-            padding: 8px 0;
-            border-bottom: 1px solid #21262d;
-            font-size: 14px;
-        }
-
-        .price-table td.price-label {
-            color: #c9d1d9;
-        }
-
-        .price-table td.price-value {
-            text-align: right;
-            color: #ffd700;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .price-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .badge-combo {
-            background-color: #da3637;
-            color: #ffffff;
-            padding: 2px 6px;
+        ::-webkit-scrollbar-thumb {
+            background: #262A3B;
             border-radius: 4px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-left: 5px;
         }
-
-        .btn-cta {
-            display: block;
-            background-color: #238636;
-            color: #ffffff;
-            text-align: center;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            text-transform: uppercase;
-            transition: background 0.2s;
-            margin-top: 15px;
-        }
-
-        .btn-cta:hover {
-            background-color: #2ea043;
-        }
-
-        /* Rodapé Profissional */
-        footer {
-            background-color: #161b22;
-            border-top: 1px solid #30363d;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 60px;
-            font-size: 13px;
-            color: #8b949e;
-        }
-
-        .social-footer {
-            margin-bottom: 15px;
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        .whatsapp-float svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EAB308;
         }
     </style>
 </head>
-<body>
+<body class="bg-darkzinc-900 text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
 
+    <header class="sticky top-0 z-50 bg-darkzinc-900/90 backdrop-blur-md border-b border-darkzinc-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-darkzinc-900 font-black text-xl gold-glow transition-transform group-hover:scale-105">
+                    <i class="fa-solid fa-car-burst"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-black tracking-wider uppercase bg-gradient-to-r from-gold-400 via-yellow-200 to-gold-500 bg-clip-text text-transparent">SÃO JOSÉ</span>
+                    <span class="block text-xs font-semibold tracking-widest text-gray-400">ESTÉTICA AUTOMOTIVA</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#servicos" class="hover:text-gold-400 transition-colors">Lavagem & Serviços</a>
+                <a href="#combos" class="hover:text-gold-400 transition-colors">Combos Especiais</a>
+                <a href="#agendamento" class="hover:text-gold-400 transition-colors">Agendamento</a>
+                <a href="#avaliacoes" class="hover:text-gold-400 transition-colors">Avaliações Google</a>
+                <a href="#contato" class="hover:text-gold-400 transition-colors">Contato</a>
+            </nav>
 
-
-    <header>
-        <div class="logo-area">
-            <h1>⚡ SÃO JOSÉ ESTÉTICA AUTOMOTIVA ⚡</h1>
-            <p>Cuidado Técnico e Proteção de Verdade para seu Patrimônio</p>
-            <div class="badge-location">📍 Setor São José (Próximo a Campinas) - GYN</div>
-
-            <div class="social-header">
-                <a href="https://www.instagram.com/detalhamento.sao.jose?igsh=MWViYmNkZHdhaDVleQ==" target="_blank" class="social-icon-link" title="Siga nosso Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/5562991760052?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20São%20José%20Estética%20Automotiva." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-lg hover:shadow-emerald-600/30">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp</span>
                 </a>
-                <a href="https://www.facebook.com/share/1Q5wVRFi1j/" target="_blank" class="social-icon-link" title="Siga nosso Facebook">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                <a href="#agendamento" class="bg-gradient-to-r from-gold-500 to-yellow-400 hover:from-gold-400 hover:to-yellow-300 text-darkzinc-900 font-bold px-5 py-2.5 rounded-xl text-sm transition-all gold-glow hover:scale-105">
+                    Agendar Horário
                 </a>
             </div>
         </div>
     </header>
 
-    <div class="container">
+    <section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 bg-gradient-to-b from-darkzinc-900 via-darkzinc-800 to-darkzinc-900">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#EAB308_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="section-title">Estética Automotiva</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-darkzinc-700/80 border border-gold-500/30 text-gold-400 text-xs font-bold tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                        <span>Rua F, Qd. 9, Lt. 23 - Setor São José (Próx. a Campinas)</span>
+                    </div>
 
-        <div class="grid-cards">
-            <div class="card-service">
-                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=1000" alt="Lavagem Simples" class="card-banner">
-                <div class="card-content">
-                    <h3>🧼 Lavagem Simples <span style="color:#ffd700; font-size:12px;">(VALOR PROMOCIONAL)</span></h3>
-                    <p style="font-size:13px; color:#8b949e; margin-bottom:12px;">Já inclui Brilho com Shampoo com Cera + Aspiração + Pretinho Técnico.</p>
-                    <table class="price-table">
-                        <tr>
-                            <td class="price-label">🚗 Carros de Passeio (Hatch / Sedan)</td>
-                            <td class="price-value">R$ 35,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🚙 Mini SUV (EcoSport, Renegade, T-Cross, Tracker e etc.)</td>
-                            <td class="price-value">R$ 40,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">👑 SUV Grande / 7 Lugares (SW4, Commander, Tiggo e etc.)</td>
-                            <td class="price-value">R$ 50,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🛻 Picape / Caminhonete (Hilux, Toro, Ranger, S10 e etc.)</td>
-                            <td class="price-value">R$ 70,00</td>
-                        </tr>
-                    </table>
-                    <a href="https://wa.me/5562991760052?text=Olá,%20gostaria%20de%20agendar%20uma%20Lavagem%20Simples%20na%20Promoção!" class="btn-cta">Chamar no WhatsApp</a>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-none">
+                        O Cuidado Extremo Que O Seu <span class="bg-gradient-to-r from-gold-400 via-yellow-200 to-gold-500 bg-clip-text text-transparent">Carro Merece</span>
+                    </h1>
+
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Tratamento de alto padrão para veículos de passeio, SUVs e picapes. Lavagem técnica detalhada, higienização profissional e proteção de elite em Goiânia.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#agendamento" class="bg-gradient-to-r from-gold-500 to-yellow-400 hover:from-gold-400 hover:to-yellow-300 text-darkzinc-900 font-extrabold px-8 py-4 rounded-2xl text-base transition-all gold-glow-lg hover:scale-105 flex items-center gap-3">
+                            <i class="fa-solid fa-calendar-days text-xl"></i>
+                            <span>Agendar Agora</span>
+                        </a>
+                        <a href="https://g.page/r/CZ2zt9sEstAGEAE/review" target="_blank" class="bg-darkzinc-700/80 hover:bg-darkzinc-600 text-gray-200 font-bold px-6 py-4 rounded-2xl text-base transition-all neon-border flex items-center gap-3">
+                            <i class="fa-solid fa-star text-gold-400 text-xl"></i>
+                            <span>Avaliar no Google</span>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-darkzinc-700/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-black text-gold-400">4h+</p>
+                            <p class="text-xs text-gray-400 mt-0.5">Lavagem Detalhada Mínima</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-gold-400">5.0 ★</p>
+                            <p class="text-xs text-gray-400 mt-0.5">Avaliação Google Business</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-gold-400">100%</p>
+                            <p class="text-xs text-gray-400 mt-0.5">Satisfação Garantida</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card-service">
-                <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=1000" alt="Proteção Estética" class="card-banner">
-                <div class="card-content">
-                    <h3>➕ Adicionais de Proteção e Higienização Técnica</h3>
-                    <table class="price-table">
-                        <tr>
-                            <td class="price-label">✨ Cera Líquida (Hatch / Sedan / Mini SUV)</td>
-                            <td class="price-value">+R$ 10,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">✨ Cera Líquida (SUVs Grandes / Picapes)</td>
-                            <td class="price-value">+R$ 15,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🛡️ Renovador de Plásticos (Proteção UV Interna e Externa)</td>
-                            <td class="price-value">+R$ 10,00 / +R$ 15,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🪑 Higienização de Bancos (Remoção técnica de manchas)</td>
-                            <td class="price-value">A partir de R$ 100,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🔝 Higienização de Teto: Carros de Passeio (Hatch / Sedan)</td>
-                            <td class="price-value">+R$ 40,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🔝 Higienização de Teto: Mini SUV (EcoSport, Renegade, etc.)</td>
-                            <td class="price-value">+R$ 50,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🔝 Higienização de Teto: SUV Grande / 7 Lg (SW4, Commander, etc.)</td>
-                            <td class="price-value">+R$ 60,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🔝 Higienização de Teto: Picape / Caminhonete (Hilux, Toro, etc.)</td>
-                            <td class="price-value">+R$ 55,00</td>
-                        </tr>
-                    </table>
-                    <a href="https://wa.me/5562991760052?text=Olá,%20gostaria%20de%20adicionar%20serviços%20especiais%20ao%20meu%20veículo!" class="btn-cta">Solicitar Adicional</a>
-                </div>
-            </div>
+                <div class="lg:col-span-5">
+                    <div class="relative bg-darkzinc-800 rounded-3xl p-6 neon-border shadow-2xl">
+                        <div class="absolute -top-3 -right-3 bg-gold-500 text-darkzinc-900 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                            Setor São José
+                        </div>
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden h-64 bg-darkzinc-700 relative">
+                                <img src="https://placehold.co/600x400/12141C/FACC15?text=Sao+Jose+Estetica+Automotiva" alt="São José Estética Automotiva" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkzinc-900/90 via-transparent to-transparent flex items-end p-4">
+                                    <div class="flex items-center gap-2 text-gold-400 text-sm font-semibold">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>Próx. a Campinas, Goiânia - GO</span>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div class="card-service">
-                <img src="https://i.ibb.co/1YSQPRfL/1780942634852.png" alt="Combos Completos" class="card-banner">
-                <div class="card-content">
-                    <h3>💎 Combos Completos <span style="color:#ffd700; font-size:12px;">(VALOR PROMOCIONAL)</span></h3>
-                    <p style="font-size:13px; color:#8b949e; margin-bottom:12px;">Lavagem + Cera Líquida + Renovador de Plásticos (Máxima proteção e brilho).</p>
-                    <table class="price-table">
-                        <tr>
-                            <td class="price-label">🚗 Carros de Passeio (Hatch / Sedan)</td>
-                            <td class="price-value">R$ 55,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🚙 Mini SUV (EcoSport, Renegade, etc.)</td>
-                            <td class="price-value">R$ 60,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">👑 SUV Grande / 7 Lugares (SW4, Commander, etc.)</td>
-                            <td class="price-value">R$ 80,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">🛻 Picape / Caminhonete <span class="badge-combo">CUSTO-BENEFÍCIO</span></td>
-                            <td class="price-value">R$ 100,00</td>
-                        </tr>
-                    </table>
-                    <a href="https://wa.me/5562991760052?text=Olá,%20quero%20aproveitar%20o%20Combo%20Completo%20com%20preço%20Promocional!" class="btn-cta">Garantir Combo</a>
+                            <div class="bg-darkzinc-900 rounded-xl p-4 border border-darkzinc-700 space-y-3">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-gray-400">WhatsApp:</span>
+                                    <a href="https://wa.me/5562991760052" target="_blank" class="text-gold-400 font-bold hover:underline">(62) 99176-0052</a>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-gray-400">Instagram:</span>
+                                    <a href="https://www.instagram.com/detalhamento.sao.jose" target="_blank" class="text-gold-400 font-bold hover:underline">@detalhamento.sao.jose</a>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-gray-400">E-mail:</span>
+                                    <span class="text-gray-200 font-medium text-xs">Detalhamento.sao.jose@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="section-title">Higienização Residencial (Sofás)</div>
+    <section id="servicos" class="py-20 bg-darkzinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-gold-400 font-bold uppercase tracking-widest text-sm">Tabela Oficial de Preços</span>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Lavagem Simples</h2>
+                <p class="text-gray-400 text-base">Shampoo com cera + aspiração detalhada + pretinho nos pneus.</p>
+            </div>
 
-        <div class="grid-cards">
-            <div class="card-service">
-                <img src="https://i.ibb.co/RGrsKx3s/1785412972105.png" alt="Higienização de Sofás" class="card-banner">
-                <div class="card-content">
-                    <h3>🛋️ Limpeza e Higienização de Sofás</h3>
-                    <table class="price-table">
-                        <tr>
-                            <td class="price-label">Sofá 2 Lugares (Fixo)</td>
-                            <td class="price-value">R$ 80,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Sofá 3 Lugares (Fixo)</td>
-                            <td class="price-value">R$ 120,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Sofá Retrátil / Reclinável (2 Lugares)</td>
-                            <td class="price-value">R$ 150,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Sofá Retrátil / Reclinável (3 Lugares)</td>
-                            <td class="price-value">R$ 200,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Sofá de Canto / Em L (Grande)</td>
-                            <td class="price-value">R$ 220,00</td>
-                        </tr>
-                    </table>
-                    <a href="https://wa.me/5562991760052?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20limpeza%20de%20sofá!" class="btn-cta">Orçamento de Sofá</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Passeio -->
+                <div class="bg-darkzinc-800 rounded-2xl p-6 neon-border flex flex-col justify-between hover:border-gold-500 transition-all group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-darkzinc-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:bg-gold-500 group-hover:text-darkzinc-900 transition-colors">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Passeio</h3>
+                        <p class="text-xs text-gray-400 mb-4">Hatch / Sedan</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Shampoo com Cera</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Aspiração Completa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Pretinho nos Pneus</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-gold-400 mb-4">R$ 40,00</div>
+                        <a href="#agendamento" onclick="prefillAgendamento('Lavagem Simples', 'Passeio (Hatch/Sedan)', 40)" class="block w-full text-center bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                            Agendar Passeio
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mini SUV -->
+                <div class="bg-darkzinc-800 rounded-2xl p-6 neon-border flex flex-col justify-between hover:border-gold-500 transition-all group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-darkzinc-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:bg-gold-500 group-hover:text-darkzinc-900 transition-colors">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Mini SUV</h3>
+                        <p class="text-xs text-gray-400 mb-4">Renegade, etc.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Shampoo com Cera</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Aspiração Completa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Pretinho nos Pneus</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-gold-400 mb-4">R$ 50,00</div>
+                        <a href="#agendamento" onclick="prefillAgendamento('Lavagem Simples', 'Mini SUV (Renegade, etc.)', 50)" class="block w-full text-center bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                            Agendar Mini SUV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SUV Grande -->
+                <div class="bg-darkzinc-800 rounded-2xl p-6 neon-border flex flex-col justify-between hover:border-gold-500 transition-all group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-darkzinc-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:bg-gold-500 group-hover:text-darkzinc-900 transition-colors">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">SUV Grande / 7 Lugares</h3>
+                        <p class="text-xs text-gray-400 mb-4">SUVs Espaçosos</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Shampoo com Cera</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Aspiração Completa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Pretinho nos Pneus</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-gold-400 mb-4">R$ 60,00</div>
+                        <a href="#agendamento" onclick="prefillAgendamento('Lavagem Simples', 'SUV Grande / 7 Lugares', 60)" class="block w-full text-center bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                            Agendar SUV Grande
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Picape / Caminhonete -->
+                <div class="bg-darkzinc-800 rounded-2xl p-6 neon-border flex flex-col justify-between hover:border-gold-500 transition-all group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-darkzinc-700 text-gold-400 flex items-center justify-center text-xl mb-4 group-hover:bg-gold-500 group-hover:text-darkzinc-900 transition-colors">
+                            <i class="fa-solid fa-truck-pickup"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Picape / Caminhonete</h3>
+                        <p class="text-xs text-gray-400 mb-4">Picapes em Geral</p>
+                        <ul class="space-y-2 text-sm text-gray-300 mb-6">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Shampoo com Cera</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Aspiração Completa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Pretinho nos Pneus</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-gold-400 mb-4">R$ 80,00</div>
+                        <a href="#agendamento" onclick="prefillAgendamento('Lavagem Simples', 'Picape / Caminhonete', 80)" class="block w-full text-center bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-200 font-bold py-2.5 rounded-xl text-sm transition-all">
+                            Agendar Picape
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="section-title">Higienização de Cadeiras, Poltronas & Tapetes</div>
+    <section id="combos" class="py-20 bg-darkzinc-800/50 border-y border-darkzinc-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-gold-400 font-bold uppercase tracking-widest text-sm">Pacotes de Alto Desempenho</span>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Combos Especiais & Economia</h2>
+                <p class="text-gray-400 text-base">Escolha o combo ideal para transformar o visual do seu veículo com economia e máxima qualidade.</p>
+            </div>
 
-        <div class="grid-cards">
-            <div class="card-service">
-                <img src="https://i.ibb.co/zW0gT9zf/1785413989325.png" alt="Higienização de Cadeiras, Poltronas e Tapetes" class="card-banner">
-                <div class="card-content">
-                    <h3>🧺 Cadeiras, Poltronas & Tapetes</h3>
-                    <table class="price-table">
-                        <tr>
-                            <td class="price-label">Cadeiras de Jantar (Apenas assento)</td>
-                            <td class="price-value">R$ 15,00 <span style="font-size:11px; color:#8b949e;">cada</span></td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Cadeiras de Jantar (Assento + Encosto)</td>
-                            <td class="price-value">R$ 20,00 <span style="font-size:11px; color:#8b949e;">cada</span></td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Poltrona Individual</td>
-                            <td class="price-value">R$ 50,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Lavagem Técnica de Tapetes</td>
-                            <td class="price-value">A partir de R$ 20,00</td>
-                        </tr>
-                    </table>
-                    <a href="https://wa.me/5562991760052?text=Olá,%20quero%20higienizar%20meus%20estofados/tapetes!" class="btn-cta">Solicitar Serviço</a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Combo 3 (Melhor Custo-Benefício) -->
+                <div class="bg-darkzinc-800 rounded-3xl p-8 border-2 border-gold-500/60 relative flex flex-col justify-between gold-glow">
+                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-gold-500 to-yellow-400 text-darkzinc-900 font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                        Melhor Custo-Benefício 🔥
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">Combo 3</h3>
+                                <p class="text-xs text-gray-400">Lavagem + Cera Líquida + Plásticos</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-6">Renova o brilho da pintura e protege os plásticos externos contra ressecamento e raios UV.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 bg-darkzinc-900 p-4 rounded-2xl mb-6 border border-darkzinc-700">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Passeio:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 60,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Mini SUV:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 70,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">SUV Gde:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 80,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Picape:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 100,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#agendamento" onclick="prefillAgendamento('Combo 3 (Custo-Benefício)', 'Passeio', 60)" class="w-full text-center bg-gold-500 hover:bg-gold-400 text-darkzinc-900 font-extrabold py-3.5 rounded-xl transition-all shadow-lg">
+                        Agendar Combo 3
+                    </a>
+                </div>
+
+                <!-- Combo 4 / O Bruto -->
+                <div class="bg-darkzinc-800 rounded-3xl p-8 border-2 border-gold-500 relative flex flex-col justify-between gold-glow-lg">
+                    <div class="absolute -top-4 right-8 bg-gradient-to-r from-gold-500 via-yellow-300 to-gold-400 text-darkzinc-900 font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg animate-pulse">
+                        O Mais Completo! 👑
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gold-500 text-darkzinc-900 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">Combo 4 / O Bruto</h3>
+                                <p class="text-xs text-gold-400 font-medium">Lavagem Completa + Cera + Plásticos + Motor + Bancos + Teto + Carpete</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-6">A restauração total do seu veículo. Por dentro e por fora com padrão de estética automotiva premium.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 bg-darkzinc-900 p-4 rounded-2xl mb-6 border border-darkzinc-700">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Passeio:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 320,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Mini SUV:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 340,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">SUV Gde:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 360,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Picape:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 380,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#agendamento" onclick="prefillAgendamento('Combo 4 / O Bruto', 'Passeio', 320)" class="w-full text-center bg-gradient-to-r from-gold-500 to-yellow-400 hover:from-gold-400 hover:to-yellow-300 text-darkzinc-900 font-extrabold py-3.5 rounded-xl transition-all shadow-lg">
+                        Agendar O Bruto
+                    </a>
+                </div>
+
+                <!-- Combo 1 (Lavagem + Bancos) -->
+                <div class="bg-darkzinc-800 rounded-3xl p-8 border border-darkzinc-700 flex flex-col justify-between hover:border-gold-500 transition-all">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-darkzinc-700 text-gold-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-chair"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">Combo 1</h3>
+                                <p class="text-xs text-gray-400">Lavagem + Higienização de Bancos (Sem teto/carpete)</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-6">Remove manchas, odores e ácaros dos bancos, devolvendo o toque macio e limpo.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 bg-darkzinc-900 p-4 rounded-2xl mb-6 border border-darkzinc-700">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Passeio:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 160,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Mini SUV:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 170,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">SUV Gde:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 180,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Picape:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 200,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#agendamento" onclick="prefillAgendamento('Combo 1 (Lavagem + Bancos)', 'Passeio', 160)" class="w-full text-center bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-white font-extrabold py-3.5 rounded-xl transition-all">
+                        Agendar Combo 1
+                    </a>
+                </div>
+
+                <!-- Combo 2 (Lavagem + Interna Completa) -->
+                <div class="bg-darkzinc-800 rounded-3xl p-8 border border-darkzinc-700 flex flex-col justify-between hover:border-gold-500 transition-all">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-darkzinc-700 text-gold-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-couch"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white">Combo 2</h3>
+                                <p class="text-xs text-gray-400">Lavagem + Interna Completa (Bancos + Teto + Carpete)</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-6">Higienização profunda de todo o interior do carro: teto, carpetes e estofados.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 bg-darkzinc-900 p-4 rounded-2xl mb-6 border border-darkzinc-700">
+                            <div>
+                                <span class="text-xs text-gray-400 block">Passeio:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 260,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Mini SUV:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 280,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">SUV Gde:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 300,00</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Picape:</span>
+                                <span class="text-lg font-black text-gold-400">R$ 300,00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#agendamento" onclick="prefillAgendamento('Combo 2 (Interna Completa)', 'Passeio', 260)" class="w-full text-center bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-white font-extrabold py-3.5 rounded-xl transition-all">
+                        Agendar Combo 2
+                    </a>
+                </div>
+            </div>
+
+            <!-- Adicionais Avulsos -->
+            <div class="mt-16 bg-darkzinc-800 rounded-3xl p-8 border border-darkzinc-700">
+                <h3 class="text-xl font-black mb-6 text-center text-gold-400">➕ Adicionais Avulsos</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                    <div class="bg-darkzinc-900 p-4 rounded-2xl border border-darkzinc-700">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-gear text-gold-400 mr-2"></i> Lavagem de Motor (Técnica)</p>
+                        <p class="text-gold-400 font-extrabold text-base">A partir de R$ 70,00</p>
+                    </div>
+                    <div class="bg-darkzinc-900 p-4 rounded-2xl border border-darkzinc-700">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-wand-magic-sparkles text-gold-400 mr-2"></i> Cera Líquida</p>
+                        <p class="text-gray-300 text-xs">+R$ 10 (Pass/Mini) | +R$ 15 (SUV/Picape)</p>
+                    </div>
+                    <div class="bg-darkzinc-900 p-4 rounded-2xl border border-darkzinc-700">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-shield-halved text-gold-400 mr-2"></i> Renovador de Plásticos</p>
+                        <p class="text-gray-300 text-xs">+R$ 10 (Pass/Mini) | +R$ 15 (SUV/Picape)</p>
+                    </div>
+                    <div class="bg-darkzinc-900 p-4 rounded-2xl border border-darkzinc-700">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-chair text-gold-400 mr-2"></i> Higienização de Bancos</p>
+                        <p class="text-gold-400 font-extrabold text-base">A partir de R$ 140,00</p>
+                    </div>
+                    <div class="bg-darkzinc-900 p-4 rounded-2xl border border-darkzinc-700">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-arrow-up text-gold-400 mr-2"></i> Higienização de Teto</p>
+                        <p class="text-gold-400 font-extrabold text-base">A partir de R$ 70,00</p>
+                    </div>
+                    <div class="bg-darkzinc-900 p-4 rounded-2xl border border-darkzinc-700">
+                        <p class="font-bold mb-1"><i class="fa-solid fa-broom text-gold-400 mr-2"></i> Higienização de Carpete</p>
+                        <p class="text-gold-400 font-extrabold text-base">A partir de R$ 70,00</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="section-title">Higienização de Colchões</div>
-
-        <div class="grid-cards">
-            <div class="card-service">
-                <img src="https://i.ibb.co/vC1xzPy8/1785412962602.png" alt="Higienização de Colchões" class="card-banner">
-                <div class="card-content">
-                    <h3>🛏️ Eliminação de Ácaros e Bactérias</h3>
-                    <p style="font-size:13px; color:#8b949e; margin-bottom:12px;">Proteção para a saúde da sua família com maquinário técnico profissional.</p>
-                    <table class="price-table">
-                        <tr>
-                            <td class="price-label">Colchão Solteiro</td>
-                            <td class="price-value">R$ 80,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Colchão Casal (Padrão)</td>
-                            <td class="price-value">R$ 140,00</td>
-                        </tr>
-                        <tr>
-                            <td class="price-label">Colchão Queen / King</td>
-                            <td class="price-value">R$ 180,00</td>
-                        </tr>
-                    </table>
-                    <a href="https://wa.me/5562991760052?text=Olá,%20quero%20higienizar%20meu%20colchão!" class="btn-cta">Agendar Colchão</a>
+    <section id="agendamento" class="py-20 bg-darkzinc-900 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-darkzinc-800 rounded-3xl p-8 sm:p-12 neon-border shadow-2xl">
+                <div class="text-center max-w-xl mx-auto mb-10 space-y-3">
+                    <span class="text-gold-400 font-bold uppercase tracking-widest text-sm">Sistema de Agendamento Inteligente</span>
+                    <h2 class="text-3xl font-black">Monte seu Agendamento</h2>
+                    <p class="text-gray-400 text-sm">Preencha os dados abaixo e envie direto para o nosso WhatsApp com resumo completo.</p>
                 </div>
+
+                <form id="bookingForm" onsubmit="enviarWhatsApp(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Seu Nome:</label>
+                            <input type="text" id="clienteNome" required placeholder="Ex: Carlos Eduardo" class="w-full bg-darkzinc-900 border border-darkzinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Seu WhatsApp / Telefone:</label>
+                            <input type="tel" id="clienteFone" required placeholder="(62) 99999-9999" class="w-full bg-darkzinc-900 border border-darkzinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Categoria do Veículo:</label>
+                            <select id="veiculoTipo" class="w-full bg-darkzinc-900 border border-darkzinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="Passeio (Hatch/Sedan)">Passeio (Hatch/Sedan)</option>
+                                <option value="Mini SUV (Renegade, etc.)">Mini SUV (Renegade, etc.)</option>
+                                <option value="SUV Grande / 7 Lugares">SUV Grande / 7 Lugares</option>
+                                <option value="Picape / Caminhonete">Picape / Caminhonete</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Serviço ou Combo:</label>
+                            <select id="servicoEscolhido" class="w-full bg-darkzinc-900 border border-darkzinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                                <option value="Lavagem Simples">Lavagem Simples</option>
+                                <option value="Combo 3 (Custo-Benefício)">Combo 3 (Custo-Benefício)</option>
+                                <option value="Combo 1 (Lavagem + Bancos)">Combo 1 (Lavagem + Bancos)</option>
+                                <option value="Combo 2 (Interna Completa)">Combo 2 (Interna Completa)</option>
+                                <option value="Combo 4 / O Bruto">Combo 4 / O Bruto (Mais Completo)</option>
+                                <option value="Lavagem de Motor (Técnica)">Lavagem de Motor (Técnica)</option>
+                                <option value="Higienização de Bancos">Higienização de Bancos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Data Desejada:</label>
+                            <input type="date" id="dataDesejada" required class="w-full bg-darkzinc-900 border border-darkzinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300">Observações Especiais (Opcional):</label>
+                        <textarea id="observacoes" rows="3" placeholder="Ex: Carro muito sujo, preciso para período matutino..." class="w-full bg-darkzinc-900 border border-darkzinc-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-yellow-400 hover:from-gold-400 hover:to-yellow-300 text-darkzinc-900 font-black py-4 rounded-xl text-base transition-all gold-glow flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Enviar Agendamento via WhatsApp</span>
+                    </button>
+                </form>
             </div>
         </div>
+    </section>
 
+    <section id="avaliacoes" class="py-20 bg-darkzinc-800/40 border-t border-darkzinc-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-gold-400 font-bold uppercase tracking-widest text-sm">Avaliações Reais do Google</span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight mt-2 mb-4">O Que Nossos Clientes Dizem</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">Depoimentos reais extraídos diretamente do nosso perfil verificado no Google Empresa.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 text-left">
+                <!-- Review 1 -->
+                <div class="bg-darkzinc-800 p-6 rounded-2xl border border-darkzinc-700 space-y-3">
+                    <div class="flex text-gold-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"Eu gostei demais, muito capricho, estava tudo brilhando e cheiroso. Super indico."</p>
+                    <p class="text-xs font-bold text-gold-400">— Ana Paula Silva Dias</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-darkzinc-800 p-6 rounded-2xl border border-darkzinc-700 space-y-3">
+                    <div class="flex text-gold-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"Muito satisfeito 😀"</p>
+                    <p class="text-xs font-bold text-gold-400">— Marcio Nogueira</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-darkzinc-800 p-6 rounded-2xl border border-darkzinc-700 space-y-3">
+                    <div class="flex text-gold-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"Resultado mais do q o esperado parabéns pelo o trabalho"</p>
+                    <p class="text-xs font-bold text-gold-400">— Fabio Miquelanti</p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-darkzinc-800 p-6 rounded-2xl border border-darkzinc-700 space-y-3">
+                    <div class="flex text-gold-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"Top dms o trampo do parceiro tmj paezao 🤝🤝🤜"</p>
+                    <p class="text-xs font-bold text-gold-400">— Vitor Silva</p>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-darkzinc-800 p-6 rounded-2xl border border-darkzinc-700 space-y-3 md:col-span-2 lg:col-span-1">
+                    <div class="flex text-gold-400 gap-1 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-300 italic">"Excelente! Parabéns!"</p>
+                    <p class="text-xs font-bold text-gold-400">— Eduardo Teodoro</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="https://g.page/r/CZ2zt9sEstAGEAE/review" target="_blank" class="bg-gold-500 hover:bg-gold-400 text-darkzinc-900 font-extrabold px-8 py-4 rounded-2xl transition-all gold-glow flex items-center gap-3">
+                    <i class="fa-brands fa-google text-xl"></i>
+                    <span>Avalie Nossa Empresa no Google</span>
+                </a>
+                <a href="https://www.instagram.com/detalhamento.sao.jose" target="_blank" class="bg-darkzinc-800 hover:bg-darkzinc-700 text-white font-bold px-8 py-4 rounded-2xl transition-all neon-border flex items-center gap-3">
+                    <i class="fa-brands fa-instagram text-gold-400 text-xl"></i>
+                    <span>Siga @detalhamento.sao.jose</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="chatWidget" class="fixed bottom-6 right-6 z-50">
+        <button id="chatToggleBtn" onclick="toggleChat()" class="w-16 h-16 rounded-full bg-gradient-to-r from-gold-500 to-yellow-400 text-darkzinc-900 font-bold flex items-center justify-center text-2xl gold-glow-lg hover:scale-110 transition-transform relative">
+            <i class="fa-solid fa-robot"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-darkzinc-900 animate-pulse"></span>
+        </button>
+
+        <div id="chatBox" class="hidden absolute bottom-20 right-0 w-[90vw] sm:w-[380px] h-[520px] bg-darkzinc-800 border border-darkzinc-600 rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+            <div class="bg-darkzinc-900 p-4 border-b border-darkzinc-700 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Assistente São José</h4>
+                        <p class="text-xs text-emerald-400 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online agora
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-gray-400 hover:text-white p-2">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 text-sm">
+                <div class="flex gap-2">
+                    <div class="w-8 h-8 rounded-full bg-gold-500 text-darkzinc-900 flex items-center justify-center font-bold text-xs flex-shrink-0">
+                        SJ
+                    </div>
+                    <div class="bg-darkzinc-700 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%]">
+                        Olá! Sou o assistente virtual da <strong>São José Estética Automotiva</strong>. Como posso te ajudar com seu veículo hoje?
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-3 py-2 bg-darkzinc-900/50 border-t border-darkzinc-700 flex gap-2 overflow-x-auto text-xs">
+                <button onclick="sendQuickPrompt('Quanto tempo demora para lavar o carro?')" class="bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-300 px-3 py-1.5 rounded-full whitespace-nowrap transition-colors">⏱️ Tempo de lavagem</button>
+                <button onclick="sendQuickPrompt('Lavagem de estofados e secagem')" class="bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-300 px-3 py-1.5 rounded-full whitespace-nowrap transition-colors">🪑 Secagem estofados</button>
+                <button onclick="sendQuickPrompt('O que vai no Combo 4?')" class="bg-darkzinc-700 hover:bg-gold-500 hover:text-darkzinc-900 text-gray-300 px-3 py-1.5 rounded-full whitespace-nowrap transition-colors">👑 O que vai no Combo 4?</button>
+            </div>
+
+            <form onsubmit="handleChatSubmit(event)" class="p-3 bg-darkzinc-900 border-t border-darkzinc-700 flex gap-2">
+                <input type="text" id="chatInput" placeholder="Digite sua dúvida..." class="flex-1 bg-darkzinc-800 border border-darkzinc-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-gold-500">
+                <button type="submit" class="bg-gold-500 hover:bg-gold-400 text-darkzinc-900 font-bold px-4 py-2 rounded-xl transition-colors">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
     </div>
 
-    <footer>
-        <div class="social-footer">
-            <a href="https://www.instagram.com/detalhamento.sao.jose?igsh=MWViYmNkZHdhaDVleQ==" target="_blank" class="social-icon-link" title="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#8b949e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="https://www.facebook.com/share/1Q5wVRFi1j/" target="_blank" class="social-icon-link" title="Facebook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#8b949e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
+    <footer id="contato" class="bg-darkzinc-900 border-t border-darkzinc-700 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-darkzinc-900 font-black text-lg">
+                            <i class="fa-solid fa-car-burst"></i>
+                        </div>
+                        <span class="text-base font-black tracking-wider uppercase text-gold-400">SÃO JOSÉ</span>
+                    </div>
+                    <p class="text-sm text-gray-400">Estética automotiva de alto padrão em Goiânia. Cuidado detalhado para valorizar e proteger o seu patrimônio.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Endereço</h4>
+                    <p class="text-sm text-gray-400 flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-gold-400 mt-1"></i>
+                        <span>Rua F, Qd. 9, Lt. 23 - Setor São José (Próx. a Campinas), Goiânia - GO</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contato & Redes</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-500"></i> <a href="https://wa.me/5562991760052" class="hover:text-gold-400">(62) 99176-0052</a></p>
+                        <p class="flex items-center gap-2"><i class="fa-brands fa-instagram text-gold-400"></i> <a href="https://www.instagram.com/detalhamento.sao.jose" class="hover:text-gold-400">@detalhamento.sao.jose</a></p>
+                        <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold-400"></i> Detalhamento.sao.jose@gmail.com</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Avaliações</h4>
+                    <p class="text-sm text-gray-400 mb-4">Avalie nosso atendimento no Google Empresa.</p>
+                    <a href="https://g.page/r/CZ2zt9sEstAGEAE/review" target="_blank" class="inline-block bg-darkzinc-800 hover:bg-gold-500 hover:text-darkzinc-900 text-gold-400 font-bold px-4 py-2.5 rounded-xl text-xs transition-all neon-border">
+                        ⭐ Avaliar no Google
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-darkzinc-700/60 text-center text-xs text-gray-500">
+                <p>&copy; 2026 São José Estética Automotiva. Todos os direitos reservados.</p>
+            </div>
         </div>
-        <p>&copy; 2026 ⚡ SÃO JOSÉ ESTÉTICA AUTOMOTIVA & HIGIENIZAÇÃO ⚡</p>
-        <p style="font-size: 11px; margin-top: 5px; color: #484f58;">Cuidado Técnico e Proteção de Verdade.</p>
     </footer>
-
-    <a href="https://wa.me/5562991760052" class="whatsapp-float" target="_blank" title="Fale Conosco no WhatsApp">
-        <svg viewBox="0 0 32 32">
-            <path d="M16 2a13 13 0 0 0-11.27 19.46L3 29l7.77-2A13 13 0 1 0 16 2zm6.72 18.5c-.27.76-1.35 1.39-1.89 1.45-.49.06-.97.23-3.13-.62a11.41 11.41 0 0 1-4.81-4.23c-.54-.73-.87-1.57-.87-2.45a2.6 2.6 0 0 1 .83-2c.24-.22.48-.27.65-.27h.45c.14 0 .33 0 .5.38l1 2.37c.08.19.14.41.01.66l-.4.5c-.13.16-.27.35-.11.62a8.33 8.33 0 0 0 1.54 1.92 7.15 7.15 0 0 0 2.22 1.37c.27.14.43.11.59-.06l.65-.76c.16-.22.35-.19.57-.11l2.42 1.14c.22.11.33.22.38.33.06.13.06.74-.21 1.5z"/>
-        </svg>
-    </a>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>São José Estética Automotiva & Higienização</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: #0d1117; color: #e6edf3; line-height: 1.6; padding-bottom: 120px; }
-
-        .promo-banner { background: linear-gradient(90deg, #da3637 0%, #ff5c5c 100%); color: #ffffff; text-align: center; padding: 12px 20px; font-size: 14px; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #ffd700; }
-
-        header { background: linear-gradient(135deg, #161b22 0%, #0d1117 100%); border-bottom: 2px solid #00e5ff; padding: 40px 20px; text-align: center; }
-        .logo-area h1 { color: #00e5ff; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
-        .badge-location { display: inline-block; background: rgba(255, 215, 0, 0.1); border: 1px solid #ffd700; color: #ffd700; padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 10px; font-weight: bold; }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .section-title { color: #ffd700; font-size: 20px; text-transform: uppercase; margin: 40px 0 20px 0; padding-left: 10px; border-left: 4px solid #00e5ff; }
-
-        .google-card { background: #161b22; border: 1px solid #00e5ff; padding: 25px; text-align: center; border-radius: 8px; margin: 30px 0; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15); }
-
-        .card-service { background-color: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 25px; padding: 20px; }
-        .btn-cta { display: block; background-color: #238636; color: #ffffff; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; text-transform: uppercase; margin-top: 15px; transition: 0.3s; }
-        .btn-cta:hover { background-color: #2ea043; }
-
-        /* Rodapé com Call-to-Action do Oráculo */
-        footer { margin-top: 60px; padding: 40px 20px; border-top: 1px solid #30363d; text-align: center; background: #0d1117; }
-        .oraculo-promo { background: #161b22; padding: 20px; border-radius: 8px; border: 1px solid #00e5ff; display: inline-block; }
-        .oraculo-promo a { color: #00e5ff; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; font-size: 16px; text-transform: uppercase; }
-
-        /* Chat Bubble */
-        #chat-bubble { position: fixed; bottom: 90px; right: 20px; background: #ffffff; color: #0d1117; padding: 15px; border-radius: 15px 15px 0 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: none; cursor: pointer; animation: fadeIn 0.5s; z-index: 999; font-size: 14px; text-decoration: none; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-    </style>
-</head>
-<body>
-
-    <div class="promo-banner">🔥 VALORES PROMOCIONAIS! GARANTA SEU PREÇO!</div>
-
-    <header>
-        <div class="logo-area">
-            <h1>⚡ SÃO JOSÉ ESTÉTICA AUTOMOTIVA ⚡</h1>
-            <div class="badge-location">📍 Setor São José - GYN</div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="google-card">
-            <h3 style="color:#00e5ff;">⭐ Avalie nosso atendimento no Google</h3>
-            <p style="margin: 10px 0;">Sua opinião é o combustível do nosso crescimento!</p>
-            <a href="https://www.google.com/search?sca_esv=2c719d755bc25006&hl=pt-BR&sxsrf=APpeQntzT49Wavo6ebssoTsmwgugqSCXYA:1785414651233&q=avalia%C3%A7%C3%B5es+sobre+s%C3%A3o+jos%C3%A9+est%C3%A9tica+automotiva+e+lavagens+de+sof%C3%A1+e+tapetes+goi%C3%A2nia&uds=AJ5uw18x2c0WuNTbkwFkfIqpBVh8LJNWQ_201Sss5nQ5KNP85Bxm1ZGre_C3MXiYDiIfxZ7-O9cwRggtQ3Jxro6J7oDzusbLw72B3_QiMqgkALCb5BgNxM68FFLI8q-Z5tz2yi-c0YzdR-SMzcX8Wu8962hyjL7NAgknZQDk6SmEAmxoPVEHEmw1G4vvmsXCVlTPjWYNFJAcRIhRwL895csP-PsOsw3I5ZQKjpgyaDzfkDNBsmyDw3eBpYy5ZUZ9b0w7B0zheoM4h0hkKTQZm9CoOx_cfPpejyWf8-GeQHyqnypRMN7Oi9cup2l7_nmYJp8_EitYjCRXYYJIUVkU_bOmoRIwu8OzqAt2Lr9BHYc-QnntqOC8MJ6dVv4ITAC5P_3lE4AKM84oew5eO1UF6O40I9EKQP9YDX9llCVlA_IbjnGMO3aREe7RrARp1pwxkPV_lGbuIbB64RFppiwUi0LVTQ0jry1cdXhdOmgayV7B0h-2W-cEfJv5jQiHeJqHfBv0nz5KZckQi0M6NpQUHnIYyekjlnKu0RfPKl6mRv0sYT7Owu_46L7BOiB50m4t-KtCzrQQixbaIhgy_yahBl0x6IcLwBW0Mw&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_3Wyo3R_0d3HdZWfap0b2SjgaZPYFNX5z1VsOb8GgAcz7f92vl4ok45Up5M5ZYs2uj0FbtZuR7FVY5iMd_KJGXYj_0sq6kQa-kRbcOOmhDKd5CWAHI_KSQ6bVl0i03XPqPiMZi2rYm8BJCdBK5AO3D6OD30Q31tTEYpmC4go8TnBJHIxKBCkwyUETPxjivsaRImiSM0%3D&sa=X&ved=2ahUKEwjBysDws_qVAxXILrkGHep0E10Qk8gLegQIFxAB&ictx=1&stq=1&cs=1&lei=-0NraoHhDcjd5OUP6unN6AU#ebo=4" target="_blank" class="btn-cta" style="background-color: #4285f4;">Avaliar no Google Empresas</a>
-        </div>
-
-        <div class="section-title">Serviços Técnicos</div>
-        <div class="card-service">
-            <h3>Estética e Higienização</h3>
-            <p>Proteção e limpeza técnica para seu patrimônio.</p>
-            <a href="https://wa.me/5562991760052" class="btn-cta">Chamar no WhatsApp</a>
-        </div>
-    </div>
-
-    <a href="https://wa.me/5562991760052?text=Olá,%20vi%20o%20site%20e%20gostaria%20de%20agendar%20um%20serviço!" id="chat-bubble" target="_blank">
-        <strong>Olá! 👋</strong><br>Vamos agendar a lavagem do seu carro?
-    </a>
-
-    <footer>
-        <div class="oraculo-promo">
-            <p style="color: #8b949e;">Site desenvolvido com tecnologia:</p>
-            <a href="https://officeoraculosystem.github.io/Oraculo-Business-Hub/" target="_blank">⚡ ORÁCULO SYSTEM</a>
-            <p style="color: #00e5ff; font-size: 12px; margin-top: 5px;">Clique aqui para ter um site personalizado também!</p>
-        </div>
-        <p style="font-size: 11px; margin-top: 20px; color: #484f58;">&copy; 2026 SÃO JOSÉ ESTÉTICA AUTOMOTIVA - Operador: Johnny</p>
-    </footer>
-
-    <a href="https://wa.me/5562991760052" class="whatsapp-float" target="_blank">💬</a>
 
     <script>
-        setTimeout(function() {
-            document.getElementById('chat-bubble').style.display = 'block';
-        }, 5000);
+        function prefillAgendamento(servico, veiculoDefault, preco) {
+            const servicoSelect = document.getElementById('servicoEscolhido');
+            for (let option of servicoSelect.options) {
+                if (option.value.toLowerCase().includes(servico.toLowerCase()) || servico.toLowerCase().includes(option.value.toLowerCase())) {
+                    option.selected = true;
+                    break;
+                }
+            }
+            
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('dataDesejada').value = today;
+            document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function enviarWhatsApp(e) {
+            e.preventDefault();
+            const nome = document.getElementById('clienteNome').value;
+            const fone = document.getElementById('clienteFone').value;
+            const veiculo = document.getElementById('veiculoTipo').value;
+            const servico = document.getElementById('servicoEscolhido').value;
+            const data = document.getElementById('dataDesejada').value;
+            const obs = document.getElementById('observacoes').value;
+
+            const mensagem = `Olá, gostaria de agendar um horário na São José Estética Automotiva!%0A` +
+                             `*Nome:* ${nome}%0A` +
+                             `*Telefone:* ${fone}%0A` +
+                             `*Veículo:* ${veiculo}%0A` +
+                             `*Serviço:* ${servico}%0A` +
+                             `*Data Desejada:* ${data}%0A` +
+                             `*Observações:* ${obs || 'Nenhuma'}`;
+
+            const url = `https://wa.me/5562991760052?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        function toggleChat() {
+            const box = document.getElementById('chatBox');
+            box.classList.toggle('hidden');
+        }
+
+        function sendQuickPrompt(text) {
+            document.getElementById('chatInput').value = text;
+            handleChatSubmit(new Event('submit'));
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            appendUserMessage(text);
+            input.value = '';
+
+            setTimeout(() => {
+                const botReply = generateBotResponse(text);
+                appendBotMessage(botReply);
+            }, 600);
+        }
+
+        function appendUserMessage(text) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'flex justify-end';
+            div.innerHTML = `<div class="bg-gold-500 text-darkzinc-900 p-3 rounded-2xl rounded-tr-none font-medium max-w-[80%]">${escapeHtml(text)}</div>`;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function appendBotMessage(text) {
+            const container = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'flex gap-2';
+            div.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-gold-500 text-darkzinc-900 flex items-center justify-center font-bold text-xs flex-shrink-0">SJ</div>
+                <div class="bg-darkzinc-700 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%]">${text}</div>
+            `;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function generateBotResponse(query) {
+            const q = query.toLowerCase();
+
+            if (q.includes('tempo') || q.includes('demora') || q.includes('horas') || q.includes('quanto tempo') || q.includes('lavar')) {
+                return "⏱️ Uma lavagem completa / regular na <strong>São José Estética Automotiva</strong> leva no <strong>mínimo 4 horas</strong>. Fazemos um trabalho detalhado e minucioso em seu veículo!";
+            } else if (q.includes('secagem') || q.includes('estofado') || q.includes('banco') || q.includes('teto') || q.includes('carpete')) {
+                return "🪑 Após a lavagem ou higienização de estofados (bancos, teto ou carpete), é recomendado um tempo de secagem de <strong>8 a 12 horas</strong> para garantir perfeita qualidade e zero umidade.";
+            } else if (q.includes('combo 4') || q.includes('bruto') || q.includes('mais completo')) {
+                return "👑 O <strong>Combo 4 / O Bruto</strong> é o mais completo: Lavagem Completa + Cera + Plásticos + Motor + Bancos + Teto + Carpete. Valores variam de R$ 320,00 a R$ 380,00 dependendo do veículo.";
+            } else if (q.includes('combo 3') || q.includes('custo')) {
+                return "🔥 O <strong>Combo 3</strong> inclui Lavagem + Cera Líquida + Plásticos, com excelente custo-benefício de R$ 60,00 a R$ 100,00.";
+            } else if (q.includes('endereço') || q.includes('onde') || q.includes('local') || q.includes('rua')) {
+                return "📍 Estamos na <strong>Rua F, Qd. 9, Lt. 23 - Setor São José (Próx. a Campinas)</strong>, Goiânia - GO.";
+            } else {
+                return `Entendi! Para tirar dúvidas detalhadas ou agendar, fale diretamente com nossa equipe no WhatsApp: <a href="https://wa.me/5562991760052" target="_blank" class="text-gold-400 font-bold underline">(62) 99176-0052</a>!`;
+            }
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
     </script>
 </body>
 </html>
-
-    <footer>
-        <a href="https://officeoraculosystem.github.io/Oraculo-Business-Hub/" target="_blank" style="text-decoration: none; display: block; margin-bottom: 30px;">
-            <div style="background: #161b22; padding: 25px; border-radius: 12px; border: 2px solid #00e5ff; text-align: center; cursor: pointer; transition: 0.3s; margin: 0 20px;">
-                <p style="color: #8b949e; font-size: 13px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Tecnologia de Gestão por:</p>
-                <h3 style="color: #00e5ff; font-size: 22px; margin-bottom: 10px; text-transform: uppercase;">⚡ ORÁCULO SYSTEM</h3>
-                <p style="color: #ffffff; font-size: 14px; font-weight: bold;">Quer transformar sua empresa em uma máquina de lucro?<br>Clique e tenha seu sistema personalizado!</p>
-
-        <div style="margin: 50px 20px; padding: 30px; background: #161b22; border: 2px solid #00e5ff; border-radius: 12px; text-align: center; box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);">
-        <p style="color: #8b949e; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Gestão Inteligente por:</p>
-        <h2 style="color: #00e5ff; margin: 10px 0; letter-spacing: 1px;">⚡ ORÁCULO SYSTEM</h2>
-        <p style="color: #e6edf3; margin-bottom: 20px; font-size: 16px;">Transformamos sua empresa em uma <strong>máquina de lucro</strong> com sistemas inteligentes.</p>
-        <a href="https://officeoraculosystem.github.io/Oraculo-Business-Hub/" target="_blank"
-           style="display: inline-block; background-color: #00e5ff; color: #0d1117; padding: 15px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; transition: 0.3s;">
-           Quero um site personalizado
-        </a>
-    </div>
-
-    <footer>
-        <p style="font-size: 12px; color: #484f58;">&copy; 2026 SÃO JOSÉ ESTÉTICA AUTOMOTIVA - Operador: Johnny</p>
-    </footer>
-        </div>
-        </a>
-
-        <div style="text-align: center; color: #484f58; font-size: 11px;">
-            <p>&copy; 2026 SÃO JOSÉ ESTÉTICA AUTOMOTIVA</p>
-            <p>Operador: Johnny | Transformando negócios em sistemas inteligentes.</p>
-        </div>
-    </footer>
-<!-- ================= SEÇÃO DE LOCALIZAÇÃO E CONTATO (LINK OFICIAL) ================= -->
-<section id="localizacao" style="background-color: #0d1117; color: #ffffff; padding: 40px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    
-    <!-- Título da Seção -->
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h2 style="color: #00e676; font-size: 24px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">
-        Nossa Localização
-      </h2>
-      <p style="color: #a0aec0; font-size: 15px; margin: 0;">
-        Venha nos visitar ou trace sua rota pelo Google Maps
-      </p>
-    </div>
-
-    <!-- Container do Card + Mapa -->
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
-      
-      <!-- Card com Informações da Empresa -->
-      <div style="flex: 1 1 300px; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
-        <h3 style="color: #ffffff; font-size: 20px; margin-top: 0; margin-bottom: 15px;">
-          São José Estética Automotiva
-        </h3>
-        <p style="color: #8b949e; font-size: 14px; margin-bottom: 20px;">
-          Lavagens de Sofá, Tapetes e Estética Automotiva de Alta Qualidade.
-        </p>
-
-        <!-- Endereço -->
-        <div style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 10px;">
-          <span style="color: #00e676; font-size: 18px;">📍</span>
-          <div style="color: #c9d1d9; font-size: 14px; line-height: 1.5;">
-            Rua F, 21 - Quadra 9, Lote 23<br>
-            St. São José, Goiânia - GO<br>
-            CEP: 74440-660
-          </div>
-        </div>
-
-        <!-- Telefone -->
-        <div style="margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
-          <span style="color: #00e676; font-size: 18px;">📞</span>
-          <a href="tel:5562991760052" style="color: #c9d1d9; font-size: 14px; text-decoration: none;">
-            (62) 99176-0052
-          </a>
-        </div>
-
-        <!-- Botões de Ação Rápida -->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <!-- Link Direto de Compartilhamento do Maps -->
-          <a href="https://maps.app.goo.gl/um6VyKWFdH7rCg9u6" target="_blank" rel="noopener noreferrer" 
-             style="background-color: #00e676; color: #000000; text-align: center; padding: 12px 20px; font-weight: bold; border-radius: 6px; text-decoration: none; transition: 0.3s; box-shadow: 0 4px 12px rgba(0, 230, 118, 0.2);">
-             🚗 COMO CHEGAR (ABRIR NO MAPS)
-          </a>
-          
-          <!-- Link de Avaliação Direta -->
-          <a href="https://g.page/r/CZ2zt9sEstAGEAE/review "
-             target="_blank" rel="noopener noreferrer" 
-             style="background-color: transparent; border: 1px solid #30363d; color: #c9d1d9; text-align: center; padding: 10px 20px; font-weight: 500; border-radius: 6px; text-decoration: none;">
-             ⭐ AVALIAR NO GOOGLE
-          </a>
-        </div>
-      </div>
-
-      <!-- Mapa Interativo Baseado na Busca Oficial do Seu Negócio -->
-      <div style="flex: 2 1 400px; min-height: 350px; width: 100%;">
-        <iframe 
-          src="https://maps.google.com/maps?q=São+José+Estética+automotiva+e+Lavagens+de+Sofá+e+tapetes,+Goiânia&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-          width="100%" 
-          height="100%" 
-          style="border:0; min-height: 350px;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Versão do Sistema: v1.0.8 (Link de Compartilhamento Oficial Integrado) | Data: 30/07/2026 -->
